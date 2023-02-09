@@ -1,0 +1,55 @@
+﻿Module #4: Advanced C#
+Task 1
+- Create a console application.
+- The application will provide the following functionality:
+    - Create message.
+        - Messages have an id, title, body, an importance.
+        - Ids are auto-incremental.
+        - Importance can be low, medium, high.
+            - Use an Enumeration.
+    - List all created messages on the console.
+        - The list of messages is it's own type.
+        - Use generic types to store the messages.
+        - The list of messages returns an IEnumerable.
+    - Delete message by id.
+        - Deleting a message does not affect the ids of the existing messages.
+    - Create recipient.
+        - Recipients have id, name, email, and phone number.
+        - Ids are auto-incremental.
+    - List all created recipients on the console.
+        - The list of recipients is it's own type.
+        - Use generic types to store the recipients.
+        - The list of recipients returns an IEnumerable.
+    - Delete recipient by id.
+        - Deleting a recipient does not affect the ids of the existing recipients.
+    - Send message by Id to recipient.
+        - The user specifies the message id and the recipient id.
+    - Send all messages to recipient.
+        - The user specifies the recipient id.
+    - Exit the application.
+    - The send message funcionality always require the user to specify if it is via Email or SMS.
+        - Using an interface is a must.
+        - Sending the messages will be simulated by displaying the information in the console.
+        - Sending an SMS will display:
+            - "Sending SMS to: " and concatenate the recipient's name. (String interpolation could be implemented).
+            - Then the recipient phone number and the message body.
+        - Sending an Email will display:
+            - "Sending Email to: " and concatenate the recipient's name. (String interpolation could be implemented).
+            - Then the recipient email address, the message title, the message importance, and the message body.
+- The application will be constantly listening for commands.
+- The application must handle exceptions and recover from errors
+
+
+Task 2
+- The application will provide the following funtionality:
+    - List all messages by importance.
+        - The user specifies the desired importance level.
+        - Using extension methods to filter the messages is a must.
+    - Send messages by importance to recipient.
+        - The user specifies the importance level.
+        - The user specifies the recipient id.
+- The application will now support sending messages as notifications.
+    - Using the same interface is a must.
+    - Sending a notification will display:
+        - "Sending Notification to: " and concatenate the recipient's name. (String interpolation could be implemented).
+        - Then recipient phone number, the message title, the message importance, and the message body.
