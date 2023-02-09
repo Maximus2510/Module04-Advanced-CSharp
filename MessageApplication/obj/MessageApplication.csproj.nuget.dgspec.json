@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Maksim_Yaskevich\\Desktop\\C# training\\CSharp in Mexico\\Module04-Advanced-CSharp\\MessageApplication\\MessageApplication.csproj": {}
+    "C:\\Users\\Maksim_Yaskevich\\Desktop\\C# training\\CSharp in Mexico\\MessageApplication\\MessageApplication\\MessageApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Maksim_Yaskevich\\Desktop\\C# training\\CSharp in Mexico\\Module04-Advanced-CSharp\\MessageApplication\\MessageApplication.csproj": {
+    "C:\\Users\\Maksim_Yaskevich\\Desktop\\C# training\\CSharp in Mexico\\MessageApplication\\MessageApplication\\MessageApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maksim_Yaskevich\\Desktop\\C# training\\CSharp in Mexico\\Module04-Advanced-CSharp\\MessageApplication\\MessageApplication.csproj",
+        "projectUniqueName": "C:\\Users\\Maksim_Yaskevich\\Desktop\\C# training\\CSharp in Mexico\\MessageApplication\\MessageApplication\\MessageApplication.csproj",
         "projectName": "MessageApplication",
-        "projectPath": "C:\\Users\\Maksim_Yaskevich\\Desktop\\C# training\\CSharp in Mexico\\Module04-Advanced-CSharp\\MessageApplication\\MessageApplication.csproj",
+        "projectPath": "C:\\Users\\Maksim_Yaskevich\\Desktop\\C# training\\CSharp in Mexico\\MessageApplication\\MessageApplication\\MessageApplication.csproj",
         "packagesPath": "C:\\Users\\Maksim_Yaskevich\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maksim_Yaskevich\\Desktop\\C# training\\CSharp in Mexico\\Module04-Advanced-CSharp\\MessageApplication\\obj\\",
+        "outputPath": "C:\\Users\\Maksim_Yaskevich\\Desktop\\C# training\\CSharp in Mexico\\MessageApplication\\MessageApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Maksim_Yaskevich\\AppData\\Roaming\\NuGet\\NuGet.Config",

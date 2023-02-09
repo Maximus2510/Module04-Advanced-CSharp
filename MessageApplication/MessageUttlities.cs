@@ -43,7 +43,6 @@ namespace MessageApplication
             }
         }
 
-
         public IEnumerable<Recipient> GetAllRecipients(Recipient recipient)
         {
             foreach(Recipient recipientEntryIenumReturn in Recipients)
@@ -51,30 +50,5 @@ namespace MessageApplication
                 yield return recipientEntryIenumReturn;
             }
         }
-
-        public bool DeleteMessageById(Message message)
-        {
-            int id = int.Parse(Console.ReadLine());
-            if(message.Id == id)
-            {
-                Messages.Remove(message);
-                return true;
-            }
-            return false;
-        }
-
-
-        public bool DeleteRecipientById(Recipient recipient)
-        {
-            int id = int.Parse(Console.ReadLine());
-            if (recipient.Id == id)
-            {
-                Recipients.Remove(recipient);
-                return true;
-            }
-            return false;
-        }
-
-
     }
 }
