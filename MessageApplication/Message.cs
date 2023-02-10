@@ -1,6 +1,6 @@
 ﻿namespace MessageApplication
 {
-    public abstract class Message
+    public class Message
     {
         public int Id;
         public string Title;
@@ -39,7 +39,7 @@
             set { Importance = value; }
         }
 
-        public abstract string MessageType();
+        //public string MessageType();
 
         public override string ToString()
         {

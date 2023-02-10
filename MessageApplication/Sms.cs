@@ -7,9 +7,9 @@
         {
         }
 
-        public override string MessageType()
-        {
-            return "Sms";
-        }
+        //public override string MessageType()
+        //{
+        //    return "Sms";
+        //}
     }
 }
