@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MessageApplication
+﻿namespace MessageApplication
 {
     public abstract class MainProgram
     {
@@ -44,10 +38,10 @@ namespace MessageApplication
                             DeleteRecipientById(_recipientUtilities);
                             break;
                         case "send message":
-                            SendMessage();
+                            SendMessageToRecipient(_messageUtilities, _recipientUtilities);
                             break;
                         case "send all messages":
-                            SendAllMessages();
+                            SendAllMessages(_messageUtilities, _recipientUtilities);
                             break;
                         case "exit":
                             Console.WriteLine("Goodbye!");
@@ -64,14 +58,83 @@ namespace MessageApplication
             }
         }
 
-        private static void SendAllMessages()
+        private static void SendAllMessages(MessageUtilities messageUtilities, RecipientUtilities recipientUtilities)
         {
-            
+            Console.WriteLine("Enter recipient id: ");
+            int recipientId = int.Parse(Console.ReadLine());
+            var recipient = recipientUtilities.GetAllRecipients().FirstOrDefault(r => r.Id == recipientId);
+
+            if (recipient == null)
+            {
+                Console.WriteLine("Recipient not found!");
+                return;
+            }
+
+            Console.WriteLine("Select mode of delivery (E-mail or SMS): ");
+            string mode = Console.ReadLine();
+
+            if (mode.ToLower() == "email")
+            {
+                foreach (var message in messageUtilities.GetAllMessages())
+                {
+                    ISend delivery = new SendEmail();
+                    delivery.Send(recipient, message);
+                }
+            }
+            else if (mode.ToLower() == "sms")
+            {
+                foreach (var message in messageUtilities.GetAllMessages())
+                {
+                    ISend delivery = new SendSms();
+                    delivery.Send(recipient, message);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid mode of delivery!");
+            }
         }
 
-        private static void SendMessage()
+        private static void SendMessageToRecipient(MessageUtilities messageUtilities, RecipientUtilities recipientUtilities)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Enter message id: ");
+            int messageId = int.Parse(Console.ReadLine());
+            var messageIdentifier = messageUtilities.GetAllMessages().FirstOrDefault(m => m.Id == messageId);
+
+            if (messageIdentifier == null)
+            {
+                Console.WriteLine("Message not found!");
+                return;
+            }
+
+            Console.WriteLine("Enter recipient id: ");
+            int recipientId = int.Parse(Console.ReadLine());
+            var recipientIdentifier = recipientUtilities.GetAllRecipients().FirstOrDefault(r => r.Id == recipientId);
+
+            if (recipientIdentifier == null)
+            {
+                Console.WriteLine("Recipient not found!");
+                return;
+            }
+
+            Console.WriteLine("Select delivery methiod by (email or sms): ");
+            string mode = Console.ReadLine();
+
+            if (mode.ToLower() == "email")
+            {
+                ISend delivery = new SendEmail();
+                delivery.Send(recipientIdentifier, messageIdentifier);
+            }
+            else if (mode.ToLower() == "sms")
+            {
+                ISend delivery = new SendSms();
+                delivery.Send(recipientIdentifier, messageIdentifier);
+            }
+            else
+            {
+                Console.WriteLine("Invalid method of delivery!");
+                return;
+            }
         }
 
         private static void DeleteRecipientById(RecipientUtilities recipientUtilities)
